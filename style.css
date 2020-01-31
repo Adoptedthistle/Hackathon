@@ -1,13 +1,30 @@
-
+body {
+  text-align: center;
+  background: #fc5c7d;
+  background: -webkit-linear-gradient(to right, #6a82fb, #fc5c7d);
+  background: linear-gradient(to right, #6a82fb, #fc5c7d);
+}
 button {
   display: block;
+  width: 150px;
+  height: 30px;
+  margin: auto;
 }
 img {
-  width: 50vw;
-  height: 50vw;
+  width: 30vw;
+  height: 30vw;
+  animation-name: cat;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  transition: all;
 }
-btn {
-  width: 600px;
-  height: 200px;
-  font-size: 20pt;
+@keyframes cat {
+  0% {
+    width: 0vw;
+    height: 0vh;
+  }
+  100% {
+    width: 30vw;
+    height: 30vh;
+  }
 }
