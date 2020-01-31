@@ -1,9 +1,13 @@
 let img = document.querySelector("img");
-let btn = document.getElementById("cat");
-btn.addEventListener("click", randomCat);
 
-function randomCat() {
-  fetch("https://aws.random.cat/meow", {
+let video = document.querySelector("video");
+let btn = document.getElementById("dog");
+
+btn.addEventListener("click", dogPic);
+
+function dogPic() {
+  fetch("https://random.dog/woof.json", {
+
     headers: {
       Accept: "application/json"
     }
@@ -14,6 +18,13 @@ function randomCat() {
     })
     .then(function(data) {
       console.log(data);
-      img.src = data["file"];
+
+      if (data.url.endsWith("mp4")) {
+        video.src = data.url;
+        return;
+      }
+      img.src = data.url;
     });
 }
+
+function randomCat() {  fetch("https://aws.random.cat/meow", {    headers: {      Accept: "application/json"    }  })    .then(function(response) {      console.log(response);      return response.json();    })    .then(function(data) {      console.log(data);      img.src = data["file"];    });}

@@ -1,7 +1,13 @@
+
 button {
   display: block;
 }
 img {
   width: 50vw;
   height: 50vw;
+}
+btn {
+  width: 600px;
+  height: 200px;
+  font-size: 20pt;
 }
