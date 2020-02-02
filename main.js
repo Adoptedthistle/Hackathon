@@ -1,12 +1,13 @@
 let img = document.getElementById("dogpic");
 let video = document.querySelector("video");
 let btn = document.getElementById("dog");
-let catimg = document.getElementById("catpic");
-let catbtn = document.getElementById("cat");
+let catimg = document.getElementsByClassName("catpic");
+let catbtn = document.getElementsByClassName("cat");
 catbtn.addEventListener("click", randomCat);
 btn.addEventListener("click", dogPic);
 
 function dogPic() {
+  img.classList.remove("hidden");
   fetch("https://random.dog/woof.json", {
     headers: {
       Accept: "application/json"
@@ -28,6 +29,7 @@ function dogPic() {
 }
 
 function randomCat() {
+  catimg.classList.remove("hidden");
   fetch("https://aws.random.cat/meow", {
     headers: { Accept: "application/json" }
   })
